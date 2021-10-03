@@ -1,0 +1,33 @@
+===============CREATING SWAP FILE=================
+
+sudo fallocate -l 8G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+sudo nvim /etc/fstab
+	ADD =>
+		#swapfile
+		/swapfile  swap swap defaults 0 0
+sudo  free -h
+
+==============REMOVE SWAP FILE====================
+
+sudo swapoff -v /swapfile
+sudo rm /swapfile
+IF NEED TO CHANGE SIZE CREATE A NEW FILE
+REMOVE SWAPFILE ENTRY IN FSTAB
+
+=============SWAPINESS====================
+
+#how often swap is used 
+cat /proc/sys/vm/swapiness
+
+#to modify 
+sudo nvim /etc/sysctl.conf
+#add line 
+vm.swapiness=10
+
+
+
+
