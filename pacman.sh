@@ -10,7 +10,7 @@ makepkg -sic
 
 
 yay -Syu
-yay -S pamac android-studio zoom
+yay -S android-studio zoom
 
 reboot
 
