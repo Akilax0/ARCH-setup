@@ -1,5 +1,5 @@
 pacman -Syu
-pacman -S linux-lts linux-lts-headers flatpak neovim redshift kdenlive gimp freecad npm python-pip htop steam lutris transmission-gtk 
+pacman -s linux-lts linux-lts-headers flatpak neovim redshift kdenlive gimp freecad npm python-pip htop steam lutris transmission-gtk inkscape 
 
 
 #flutter
