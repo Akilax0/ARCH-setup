@@ -24,7 +24,7 @@ set cursorline
 set ttyfast			" speed scrolling
 
 
-colorscheme dracula
+colorscheme onedark
 
 " set noswapfile
 " set backupir=~/.cache/vim 
@@ -41,13 +41,14 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'preservim/nerdcommenter'
  Plug 'mhinz/vim-startify'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'vim-airline/vim-airline'
 call plug#end()
 
 
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
-
+map  <C-b> :NERDTreeToggle<CR>
 
 " autocomplete menu
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
