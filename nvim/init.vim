@@ -24,15 +24,13 @@ set cursorline
 set ttyfast			" speed scrolling
 
 
-colorscheme onedark
-
 " set noswapfile
 " set backupir=~/.cache/vim 
 
 
 call plug#begin("~/.config/nvim/plugged")
  " Plugin Section
- Plug 'navarasu/onedark.nvim', {'as':'onedark'}
+ Plug 'gruvbox-community/gruvbox'
  Plug 'dracula/vim',{'as':'dracula'}
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
@@ -44,6 +42,8 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'vim-airline/vim-airline'
 call plug#end()
 
+colorscheme gruvbox 
+highlight Normal guibg=NONE ctermbg=NONE 
 
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
