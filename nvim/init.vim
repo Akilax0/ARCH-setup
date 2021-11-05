@@ -9,10 +9,8 @@ set shiftwidth=4		" width for auto indent
 set autoindent 			" indent a new line the same
 set number
 
-
-
 set wildmode=longest,list	" get bash-like tab completions
-" set cc=80 			" set coloumn border
+set cc=80 			" set coloumn border
 
 filetype plugin on 	" autoindent depending on file type
 
@@ -33,17 +31,18 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'gruvbox-community/gruvbox'
  Plug 'dracula/vim',{'as':'dracula'}
  Plug 'ryanoasis/vim-devicons'
- Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
  Plug 'mhinz/vim-startify'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'vim-airline/vim-airline'
+ "LSP
+ Plug 'neovim/nvim-lspconfig'
+ Plug 'williamboman/nvim-lsp-installer'
 call plug#end()
 
 colorscheme gruvbox 
-highlight Normal guibg=NONE ctermbg=NONE 
+" highlight Normal guibg=NONE ctermbg=NONE 
 
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
@@ -56,3 +55,36 @@ inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 
+" leader key
+let mapleader=","
+
+""LSP language server setups
+""python
+
+"lua << EOF
+"require'lspconfig'.pyright.setup{}
+"EOF
+
+""C++/C
+"lua << EOF
+"require'lspconfig'.sourcekit.setup{}
+"EOF
+
+lua << EOF
+local lsp_installer = require("nvim-lsp-installer")
+
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
+
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
+    server:setup(opts)
+end)
+EOF
