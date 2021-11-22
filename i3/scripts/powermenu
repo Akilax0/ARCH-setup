@@ -117,7 +117,8 @@ menu=(
   [ Shutdown]="systemctl poweroff"
   [ Reboot]="systemctl reboot"
   [ Suspend]="systemctl suspend"
-  [ Lock]="~/.config/i3/scripts/blur-lock.sh"
+  [ Lock]="exec xflock4"
+  #"~/.config/i3/scripts/blur-lock.sh"
   [ Logout]="i3-msg exit"
   [ Cancel]=""
 )
