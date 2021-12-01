@@ -30,4 +30,7 @@ vm.swapiness=10
 
 
 
+==========================================================
+check errors
+inxi -F && dmesg | grep -i error && tail -10 /var/log/kern.log
 
