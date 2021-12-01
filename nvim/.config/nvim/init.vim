@@ -98,6 +98,7 @@ inoremap <C-j> <C-o>gj
 " Github fugitive keymaps
 nmap <Leader>gs :G<CR>
 nmap <Leader>gc :Git commit<CR>
+nmap <Leader>gp :Git push<CR>
 
 
 
