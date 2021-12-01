@@ -1,25 +1,36 @@
-set nocompatible		" disable vi
+set exrc				" uses init on that folder
+
 set showmatch			" show matching
 set ignorecase			" case insensitiev
-set hlsearch 			" highlight search
-set incsearch			" incremental search
-set tabstop=4
-set softtabstop=4		" number of coloumns occupied by a tab
-set shiftwidth=4		" width for auto indent
+set nohlsearch 			" remove highlight search
+set incsearch			" highlight while typing for search
+
+" change to 4 if too rough
+set tabstop=8
+set softtabstop=8		" number of coloumns occupied by a tab
+set shiftwidth=8		" width for auto indent
 set autoindent 			" indent a new line the same
-set number
+
+
+set number			" numbered line
+set relativenumber		" relative numbers on line
+set nu				" number the current line
+
 
 set wildmode=longest,list	" get bash-like tab completions
 set cc=80 			" set coloumn border
 
-filetype plugin on 	" autoindent depending on file type
+filetype plugin on		" autoindent depending on file type
+
 
 syntax on
-set mouse=a					" enable mouse click
+set mouse=a			" enable mouse click
 set clipboard=unnamedplus	" use system clipboard
 filetype plugin on 		
 set cursorline
-set ttyfast			" speed scrolling
+
+set scrolloff=10		"centered cursor
+set signcolumn=yes		"coloumn for errors 
 
 
 " set noswapfile
@@ -36,13 +47,21 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'preservim/nerdcommenter'
  Plug 'mhinz/vim-startify'
  Plug 'vim-airline/vim-airline'
+
  "LSP
- Plug 'neovim/nvim-lspconfig'
- Plug 'williamboman/nvim-lsp-installer'
+ "Plug 'neovim/nvim-lspconfig'
+ "Plug 'hrsh7th/nvim-compe'
+ "Plug 'williamboman/nvim-lsp-installer'
+
+ " COC
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
  "telescope
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim'
  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+ 
 " PlatformIO
  Plug 'neomake/neomake'
 
@@ -54,19 +73,16 @@ colorscheme gruvbox
 " leader key
 let mapleader=" "
 
-
+" tab movement
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
-map  <C-b> :NERDTreeToggle<CR>
-map  <C-b> :NERDTreeToggle<CR>
-nnoremap  <leader>t  :Telescope<CR>
-" autocomplete menu
-inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 
+" nerd tree toggle
+map  <C-b> :NERDTreeToggle<CR>
+
+" Telescope
+nnoremap  <leader>t  :Telescope<CR>
 
 " insert mode movement
 inoremap <C-k> <C-o>gk
@@ -74,40 +90,39 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-j> <C-o>gj
 
-""LSP language server setups
-lua << EOF
-local lsp_installer = require("nvim-lsp-installer")
+"#auto complete with -> compe
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
+"set completeopt=menuone,noselect
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+"let g:compe = {}
+"let g:compe.enabled = v:true
+"let g:compe.autocomplete = v:true
+"let g:compe.debug = v:false
+"let g:compe.min_length = 1
+"let g:compe.preselect = 'enable'
+"let g:compe.throttle_time = 80
+"let g:compe.source_timeout = 200
+"let g:compe.resolve_timeout = 800
+"let g:compe.incomplete_delay = 400
+"let g:compe.max_abbr_width = 100
+"let g:compe.max_kind_width = 100
+"let g:compe.max_menu_width = 100
+"let g:compe.documentation = v:true
 
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
-    server:setup(opts)
-end)
+"let g:compe.source = {}
+"let g:compe.source.path = v:true
+"let g:compe.source.buffer = v:true
+"let g:compe.source.calc = v:true
+"let g:compe.source.nvim_lsp = v:true
+"let g:compe.source.nvim_lua = v:true
+"let g:compe.source.vsnip = v:true
+"let g:compe.source.ultisnips = v:true
+"let g:compe.source.luasnip = v:true
+"let g:compe.source.emoji = v:true
 
--- You dont need to set any of these options. These are the default ones. Only
--- the loading is important
-require('telescope').setup {
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
-    }
-  }
-}
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
-require('telescope').load_extension('fzf')
+"inoremap <silent><expr> <C-Space> compe#complete()
+"inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+"inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+"inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+"inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
-EOF

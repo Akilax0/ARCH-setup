@@ -1,3 +1,5 @@
 # ARCH-setup
 
-Contains setup scripts for a post ARCH insallation
+Contains setup scripts for a post ARCH/Debian insallation
+
+
