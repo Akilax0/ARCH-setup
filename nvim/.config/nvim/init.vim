@@ -65,6 +65,10 @@ call plug#begin("~/.config/nvim/plugged")
 " PlatformIO
  Plug 'neomake/neomake'
 
+" Github integration
+Plug 'tpope/vim-fugitive'
+
+
 call plug#end()
 
 colorscheme gruvbox 
@@ -89,6 +93,13 @@ inoremap <C-k> <C-o>gk
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-j> <C-o>gj
+
+
+" Github fugitive keymaps
+nmap <Leader>gs :G<CR>
+nmap <Leader>gc :Git commit<CR>
+
+
 
 "#auto complete with -> compe
 
