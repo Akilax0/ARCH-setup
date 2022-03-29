@@ -78,7 +78,7 @@ colorscheme gruvbox
 let mapleader=" "
 
 " tab movement
-map  <C-l> :tabn<CR>
+mAp  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 
@@ -86,7 +86,9 @@ map  <C-n> :tabnew<CR>
 map  <C-b> :NERDTreeToggle<CR>
 
 " Telescope
-nnoremap  <leader>t  :Telescope<CR>
+nnoremap  <leader>tt  :Telescope find_files<CR>
+nnoremap  <leader>tg  :Telescope git_commits<CR>
+nnoremap  <leader>tc  :Telescope commands<CR>
 
 " insert mode movement
 inoremap <C-k> <C-o>gk
