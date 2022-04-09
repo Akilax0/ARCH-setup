@@ -71,6 +71,8 @@ Plug 'tpope/vim-fugitive'
 " Terminal toggling
 Plug 'akinsho/toggleterm.nvim'
 
+" Remote SSH file access
+Plug 'chipsenkbeil/distant.nvim'
 call plug#end()
 
 colorscheme gruvbox 
@@ -106,6 +108,6 @@ nmap <Leader>gp :Git push<CR>
 
 " Terminal
 nnoremap  <leader>z :ToggleTerm size=40 direction=float <CR>
-tmap  <C-w> <C-\><C-n>:ToggleTermToggleAll<CR>
+tmap  <C-z> <C-\><C-n>:ToggleTermToggleAll<CR>
 tmap  <C-q> exit<CR>
-nmap  <C-w> :ToggleTermToggleAll<CR>
+nmap  <C-z> :ToggleTermToggleAll<CR>
