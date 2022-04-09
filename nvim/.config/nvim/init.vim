@@ -90,7 +90,7 @@ map  <C-n> :tabnew<CR>
 map  <C-b> :NERDTreeToggle<CR>
 
 " Telescope
-nnoremap  <leader>tt  :Telescope find_files<CR>
+nnoremap  <leader>tt  :Telescope find_files hidden=true no_ignore=true<CR>
 nnoremap  <leader>tg  :Telescope git_commits<CR>
 nnoremap  <leader>tc  :Telescope commands<CR>
 
@@ -111,3 +111,5 @@ nnoremap  <leader>z :ToggleTerm size=40 direction=float <CR>
 tmap  <C-z> <C-\><C-n>:ToggleTermToggleAll<CR>
 tmap  <C-q> exit<CR>
 nmap  <C-z> :ToggleTermToggleAll<CR>
+
+
