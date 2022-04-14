@@ -62,7 +62,13 @@ bindsym $mod+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id rofi -combi-modi drun -theme Pop-Dark -font "JetBrainsMono 10" -show drun
+bindsym $mod+d exec --no-startup-id rofi -combi-modi drun -theme gruvbox-dark-hard  -font "JetBrainsMono 12" -show drun
+# rofi -modi "window,drun,ssh,run,combi"
+#
+#The theme can be selected running 
+#	rofi-theme-selector
+#
+#
 #i3-dmenu-desktop
 
 #lock system
