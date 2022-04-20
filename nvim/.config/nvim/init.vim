@@ -19,6 +19,7 @@ set nu				" number the current line
 
 set wildmode=longest,list	" get bash-like tab completions
 set cc=80 			" set coloumn border
+set textwidth=80		" set 80 coloumn limit
 
 filetype plugin on		" autoindent depending on file type
 
