@@ -6,9 +6,9 @@ set nohlsearch 			" remove highlight search
 set incsearch			" highlight while typing for search
 
 " change to 4 if too rough
-set tabstop=8
-set softtabstop=8		" number of coloumns occupied by a tab
-set shiftwidth=8		" width for auto indent
+set tabstop=4
+set softtabstop=4		" number of coloumns occupied by a tab
+set shiftwidth=4		" width for auto indent
 set autoindent 			" indent a new line the same
 
 
@@ -77,7 +77,7 @@ Plug 'chipsenkbeil/distant.nvim'
 call plug#end()
 
 colorscheme gruvbox 
-" highlight Normal guibg=NONE ctermbg=NONE 
+ highlight Normal guibg=NONE ctermbg=NONE 
 
 " leader key
 let mapleader=" "

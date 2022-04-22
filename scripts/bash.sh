@@ -7,6 +7,9 @@ sudo apt install bash-completion
 # add line to bashrc
 sourc /usr/share/bash-completion/bash_completion
 
+#colored man pages
+sudo apt install most
+
 
 
 
