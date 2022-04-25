@@ -77,7 +77,7 @@ Plug 'chipsenkbeil/distant.nvim'
 call plug#end()
 
 colorscheme gruvbox 
- highlight Normal guibg=NONE ctermbg=NONE 
+ "highlight Normal guibg=NONE ctermbg=NONE 
 
 " leader key
 let mapleader=" "
