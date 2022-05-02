@@ -1,10 +1,10 @@
 
 # Aliases 
-alias ll='ls -l'
+alias ll='exa -la --icons'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias cs="cd ~/Documents/Academic/sem6/"
+alias cs="cd ~/Documents/Academics/sem6/"
 alias t="tmux"
 
 export QUESTA_ROOTDIR="/home/akilax0/intelFPGA/21.1/questa_fse/bin"

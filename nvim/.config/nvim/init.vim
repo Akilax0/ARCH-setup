@@ -48,6 +48,7 @@ call plug#begin("~/.config/nvim/plugged")
  Plug 'preservim/nerdcommenter'
  Plug 'mhinz/vim-startify'
  Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
 
  "LSP
  "Plug 'neovim/nvim-lspconfig'
@@ -77,7 +78,10 @@ Plug 'chipsenkbeil/distant.nvim'
 call plug#end()
 
 colorscheme gruvbox 
- highlight Normal guibg=NONE ctermbg=NONE 
+" highlight Normal guibg=NONE ctermbg=NONE 
+
+" Setting airline theme
+let g:airline_theme='gruvbox'
 
 " leader key
 let mapleader=" "
