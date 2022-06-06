@@ -5,6 +5,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias cs="cd ~/Documents/Academics/sem6/"
+alias cc="cd ~/Documents/Academics/sem3/"
+alias cp="cd ~/Documents/projects/"
 alias t="tmux"
 
 export QUESTA_ROOTDIR="/home/akilax0/intelFPGA/21.1/questa_fse/bin"
