@@ -38,4 +38,7 @@ inxi -F && dmesg | grep -i error && tail -10 /var/log/kern.log
 =================set Caps to control===============
 setxkbmap -option ctrl:swapcaps
 
+=================DISABLE gnome animations=================
+gsettings set org.gnome.desktop.interface enable-animations false
+
 
