@@ -18,3 +18,7 @@ mkdir -p ~/.config/i3status
 cp /etc/local/share/examples/i3status/i3status.conf ~/.config/i3status
 echo exec i3 > .xsession
 
+# Package install url
+/etc/installurl
+
+cdn <-> ftp
