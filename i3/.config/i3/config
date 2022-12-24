@@ -32,8 +32,7 @@ exec --no-startup-id nm-applet
 
 
 #redshift for the eyes
-exec --no-startup-id redshift-gtk
-
+exec --no-startup-id redshift -O 3000
 #set wallpaper
 exec --no-startup-id nitrogen --restore
 
@@ -51,7 +50,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec xfce4-terminal
 
 
 # start Thunar 
@@ -201,8 +200,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #remove title bar from windows
-default_border pixel 
-
+default_border pixel 0
 #border for floating windows
 default_floating_border pixel 3 
 
