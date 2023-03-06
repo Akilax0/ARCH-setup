@@ -1,4 +1,3 @@
-
 # Aliases 
 alias ll='exa -la --icons'
 alias la='ls -A'
