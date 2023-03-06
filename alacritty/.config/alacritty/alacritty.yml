@@ -154,7 +154,7 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     family: monospace
-    # family: JetBrains Mono
+    #family: JetBrains Mono
 
 
     # The `style` can be specified to pick a specific face.
