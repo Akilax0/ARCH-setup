@@ -45,10 +45,9 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
-
+  padding:
+    x: 10
+    y: 10
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
 
@@ -67,7 +66,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1.0 
+  opacity: 0.8 
 
   # Startup Mode (changes require restart)
   #
@@ -117,8 +116,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: JetBrains Mono
-    #family: monospace
+    #family: JetBrains Mono
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: ExtraBold
@@ -130,8 +129,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
-    #family: monospace
+    #family: JetBrains Mono
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: ExtraBold
@@ -142,8 +141,8 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-    family: JetBrains Mono
+    family: monospace
+    #family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -154,15 +153,15 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-    family: JetBrains Mono
+    family: monospace
+    # family: JetBrains Mono
 
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 10.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
