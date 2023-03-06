@@ -117,8 +117,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: JetBrains Mono
-    #family: monospace
+    #family: JetBrains Mono
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: ExtraBold
@@ -130,8 +130,8 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
-    #family: monospace
+    #family: JetBrains Mono
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: ExtraBold
@@ -142,8 +142,8 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-    family: JetBrains Mono
+    family: monospace
+    #family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -154,8 +154,8 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-    family: JetBrains Mono
+    family: monospace
+    #family: JetBrains Mono
 
 
     # The `style` can be specified to pick a specific face.
